@@ -1,0 +1,29 @@
+* {
+    transition: all 40ms;
+    box-sizing: border-box;
+}
+html {
+    margin: env(safe-area-inset);
+    padding: env(safe-area-inset);
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
+    color: black;
+    overflow-y: scroll;
+    background-color: white;
+    white-space: normal;
+}
+body {
+    background-color: white;
+    overflow: hidden;
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+}
+img {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
