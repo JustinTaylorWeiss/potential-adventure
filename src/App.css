@@ -6,14 +6,19 @@ html {
     margin: env(safe-area-inset);
     padding: env(safe-area-inset);
     scroll-behavior: smooth;
-    font-family: "Sometype Mono", sans-serif;
+    font-family: "roboto", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    font-size: 0.7rem;
     color: black;
     overflow-y: scroll;
     white-space: normal;
     overflow-x: hidden;
 }
 body {
-    overscroll-behavior-y: none;
+    background-image: url("./pages/landing/assets/paper.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;

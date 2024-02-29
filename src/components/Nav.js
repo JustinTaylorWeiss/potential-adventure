@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "./assets/logo1.png";
 import MenuIcon from '@mui/icons-material/Menu';
 
 
@@ -15,7 +14,7 @@ const NavWrap = styled.div`
 `
 
 const Logo = styled.img`
-    width: 20%;
+    width: 10%;
 `;
 
 const Menu = styled(MenuIcon)`
@@ -23,16 +22,17 @@ const Menu = styled(MenuIcon)`
     height: 100vw;
     margin: 0 20px;
     color: white;
+    filter: drop-shadow(1px 1px 0.5px black);
     &:hover {
         cursor: pointer;
-        color: brown;
+    }
+    &:active {
+        margin: 2.5px 22.5px 0 22.5px;
     }
 `;
 
 export const Nav = ({menuClick}) => (
     <NavWrap>
-        <Menu sx={{ fontSize: 60 }} onClick={() => menuClick()}/>
-        <Logo src={logo} draggable="false"/>
-        <Menu visibility="hidden" sx={{ fontSize: 60 }}/>
+        <Menu sx={{ fontSize: 60, '&:active': { fontSize: 55} }} onClick={() => menuClick()}/>
     </NavWrap>  
 );
