@@ -146,10 +146,10 @@ const SmallRow = styled.span`
         letter-spacing: 0.1rem;
     }
     @media (max-width: 550px) {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     @media (max-width: 450px) {
-        font-size: 0.75rem;
+        letter-spacing: 0;
     }
 `;
 

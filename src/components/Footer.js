@@ -17,7 +17,7 @@ const AboutWrapper = styled.div`
 const Bar = styled.img`
     width: 80%;
     height: 10px;
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
         height: 5px;
     }
 `;
@@ -54,7 +54,9 @@ const EXLink = styled.a`
         color: #d49d04;
     }
     @media (max-width: 700px) {
-        font-size: 1rem;
+        font-size: 2rem;
+        margin: 8px;
+        text-align: center;
     }
     @media (max-width: 500px) {
         font-size: 0.8rem;
@@ -75,15 +77,6 @@ const INLink = styled(Link)`
     color: #101012;
     &:hover {
         color: #d49d04;
-    }
-    @media (max-width: 700px) {
-        font-size: 1rem;
-    }
-    @media (max-width: 500px) {
-        font-size: 0.8rem;
-    }
-    @media (max-width: 450px) {
-        font-size: 0.7rem;
     }
 `;
 
@@ -109,17 +102,19 @@ export const Footer = () => {
     return <AboutWrapper>
         <Bar src={line}/>
         <Row>
-            <Column>
-                <INLink to="/" onClick={linkClick("/")} draggable={false}>
-                    HOME
-                </INLink>
-                <INLink to="/contact-us" onClick={linkClick("/contact-us")} draggable={false}>
-                    CONTACT US
-                </INLink>
-                <INLink to="/our-products" onClick={linkClick("/our-products")} draggable={false}>
-                    OUR PRODUCTS
-                </INLink>
-            </Column>
+            {
+                !useMediaQuery({ query:'(max-width: 700px)'}) && <Column>
+                    <INLink to="/" onClick={linkClick("/")} draggable={false}>
+                        HOME
+                    </INLink>
+                    <INLink to="/contact-us" onClick={linkClick("/contact-us")} draggable={false}>
+                        CONTACT US
+                    </INLink>
+                    <INLink to="/our-products" onClick={linkClick("/our-products")} draggable={false}>
+                        OUR PRODUCTS
+                    </INLink>
+                </Column>
+            }
             <Column>
                 <EXLink href="tel:17184862800" draggable={false}>
                     (718)486-2800

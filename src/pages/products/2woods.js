@@ -81,6 +81,9 @@ const Arrow = styled.img`
         padding: 10px 0;
         height: 40%;
     }
+    @media (max-width: 700px) {
+        display: none;
+    }
 `;
 
 const IMG = styled.img`

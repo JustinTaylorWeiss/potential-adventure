@@ -18,4 +18,7 @@
 .imgContainer > img {
     pointer-events: none !important;
     object-fit: cover !important;
+    @media (max-width: 800px) {
+        height: 60vh;
+    }
 }

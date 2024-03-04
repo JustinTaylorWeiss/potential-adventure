@@ -10,6 +10,7 @@ import { Contact } from './pages/contact';
 import { Landing } from './pages/landing';
 import { Footer } from './components/Footer';
 import { Products } from './pages/products';
+import { useMediaQuery } from 'react-responsive';
 
 const Blur = styled.div`
     position: absolute;
@@ -20,9 +21,10 @@ const Blur = styled.div`
 `;
 
 const AppWrap = styled.div`
-        overflow-y: ${props => props.$menuOpen ? "hidden" : "scroll"};
-        height: 100vh;
-        overflow-x: hidden;
+    position: relative;
+    overflow-y: ${props => props.$menuOpen ? "hidden" : "scroll"};
+    height: 100vh;
+    overflow-x: hidden;
 `;
 
 const BackgroundWrap = styled.div`
@@ -54,7 +56,7 @@ const App = () => {
                         <Route exact path = {"/contact-us"}   element={<Contact/>}/>
                         <Route path = "*"                     element={<Navigate to="/"/>}/>
                     </Routes>
-                    <Footer/>
+                    { !useMediaQuery({ query:'(max-width: 700px)'}) && <Footer/> }
                 </URLProvider>
             </BackgroundWrap>
         </AppWrap>

@@ -69,7 +69,6 @@ const Subtitle = styled.div`
     @media (max-width: 1200px) {
         text-align: center;
         margin-left: 0;
-        margin-bottom: 20px;
     }
     @media (max-width: 500px) {
         letter-spacing: 0.2rem;
@@ -119,8 +118,8 @@ const Column = styled.div`
     }
 `;
 
-const normalConstructionText = [`Rough cut timbers`, `up to 12"x12"x20'`, `Sheathing`, `Lagging`, `Shoring Lumber`, `Dimentional Lumber`, `Plywood`, `OSHA Plank`, `Crane Mats`, `Trailer Decking`,]
-const ConstructionTextWithHyphen = [` - Rough cut timbers`, `up to 12"x12"x20'`, ` - Sheathing`, ` - Lagging`, ` - Shoring Lumber`, ` - Dimentional Lumber`, ` - Plywood`, ` - OSHA Plank`, ` - Crane Mats`, ` - Trailer Decking`,]
+const normalConstructionText = [`Rough cut timbers`, `Sheathing`, `Lagging`, `Shoring Lumber`, `Dimentional Lumber`, `Plywood`, `OSHA Plank`, `Crane Mats`, `Trailer Decking`,]
+const ConstructionTextWithHyphen = [` - Rough cut timbers`, ` - Sheathing`, ` - Lagging`, ` - Shoring Lumber`, ` - Dimentional Lumber`, ` - Plywood`, ` - OSHA Plank`, ` - Crane Mats`, ` - Trailer Decking`,]
 
 const normalHardwoodText = [`Charcuterie Boards`, `Slabs`, `Tables`];
 const hardwoodTextWithHyphen = [` - Charcuterie Boards`, ` - Slabs`, ` - Tables`];
@@ -137,10 +136,15 @@ export const LandingWhatTile = () => {
                         ? normalConstructionText
                         : ConstructionTextWithHyphen
                     ).map((text, i) => (
-                        <Row style={{marginBottom: i === 0 ? "-6px" : "8px"}} key={`What-C-Row-${i}`}>{text}</Row>
+                        <Row key={`What-C-Row-${i}`}>{text}</Row>
                     ))
                 }
-                <Spacer $height="40px"/>
+                {
+                    useMediaQuery({ query:'(max-width: 1200px)'}) && <Column>
+                        <IMG src={plank}/>
+                    </Column>
+                }
+                <Spacer $height="100px"/>
                 <Subtitle>HARDWOOD PRODUCTS</Subtitle>
                 {
                     (useMediaQuery({ query:'(max-width: 1200px)'})
