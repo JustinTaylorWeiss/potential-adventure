@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/potential-adventure/static/css/main.4b9e28b5.css",
-    "main.js": "/potential-adventure/static/js/main.a99b6e6a.js",
+    "main.css": "/potential-adventure/static/css/main.ff52b85f.css",
+    "main.js": "/potential-adventure/static/js/main.dc341539.js",
     "static/media/paper.jpg": "/potential-adventure/static/media/paper.e9c1a526d9236c7a14e8.jpg",
-    "static/media/hero.jpg": "/potential-adventure/static/media/hero.7eaa7c556e1d23048501.jpg",
+    "static/media/hero.jpg": "/potential-adventure/static/media/hero.c2227492216521464f78.jpg",
     "static/media/menuWood.jpg": "/potential-adventure/static/media/menuWood.47d59f1cba2bdc0a1590.jpg",
     "static/media/bridge.png": "/potential-adventure/static/media/bridge.b2bebb228fb2ee5149d5.png",
     "static/media/board.png": "/potential-adventure/static/media/board.431eabb845d223b26445.png",
@@ -25,11 +25,11 @@
     "static/media/whiteLogo.png": "/potential-adventure/static/media/whiteLogo.254d45676ee420d3d9f9.png",
     "index.html": "/potential-adventure/index.html",
     "static/media/arrow.svg": "/potential-adventure/static/media/arrow.3c7e85cd52826cfd5c9df6e96bcee2e3.svg",
-    "main.4b9e28b5.css.map": "/potential-adventure/static/css/main.4b9e28b5.css.map",
-    "main.a99b6e6a.js.map": "/potential-adventure/static/js/main.a99b6e6a.js.map"
+    "main.ff52b85f.css.map": "/potential-adventure/static/css/main.ff52b85f.css.map",
+    "main.dc341539.js.map": "/potential-adventure/static/js/main.dc341539.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b9e28b5.css",
-    "static/js/main.a99b6e6a.js"
+    "static/css/main.ff52b85f.css",
+    "static/js/main.dc341539.js"
   ]
 }
