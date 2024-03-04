@@ -6,16 +6,13 @@ const NavWrap = styled.div`
     position: absolute;
     width: 100%;
     top: 10px;
+    z-index: 2;
     font-size: 40px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 `
-
-const Logo = styled.img`
-    width: 10%;
-`;
 
 const Menu = styled(MenuIcon)`
     width: 100vw;
@@ -33,6 +30,6 @@ const Menu = styled(MenuIcon)`
 
 export const Nav = ({menuClick}) => (
     <NavWrap>
-        <Menu sx={{ fontSize: 60, '&:active': { fontSize: 55} }} onClick={() => menuClick()}/>
+        <Menu sx={{ fontSize: 45, '&:active': { fontSize: 40} }} onClick={() => menuClick()}/>
     </NavWrap>  
 );

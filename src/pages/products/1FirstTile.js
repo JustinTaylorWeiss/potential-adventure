@@ -1,23 +1,25 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+import hero from "./assets/hero.jpg";
 import logo from "./assets/whiteLogo.png";
 import { Button, TopLogo } from "../../globalComponents";
-import { Gallery } from "../../components/gallery";
 import { Link } from "react-router-dom";
 import { useURL } from "../../contexts/useURL";
+import { useEffect } from "react";
 
-const LandingTileWrap = styled.div`
+const ContactWrapper = styled.div`
     position: relative;
     width: 100vw;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
-    margin-bottom: 50px;
     padding: 0;
-    color: white;
     font-weight: 400;
-    @media (max-width: 600px) {
-        margin-bottom: 20px;
-    }
+    color: white;
 `;
+
+const Hero = styled.img`
+    width: 100vw;
+`;
+
 
 const TextWrap = styled.div`
     position: absolute;
@@ -35,28 +37,27 @@ const TextWrap = styled.div`
 `;
 
 const CTA = styled(Button)`
+    margin-top: 30px;
     &:active {
         padding: 20px 15px;
-        margin-top: 105px;
+        margin-top: 35px;
         margin-bottom: 5px;
     }
     @media (max-width: 1000px) {
-        margin-top: 50px;
+        margin-top: 20px;
         font-size: 1.2rem;
         padding: 20px 20px;
         &:active {
             padding: 15px 15px;
-            margin-top: 55px;
+            margin-top: 25px;
         }
     }
     @media (max-width: 800px) {
         font-size: 1rem;
         letter-spacing: 0.2rem;
-        margin-top: 20px;
         padding: 15px 10px;
         &:active {
             padding: 10px 5px;
-            margin-top: 25px;
         }
     }
     @media (max-width: 600px) {
@@ -64,17 +65,18 @@ const CTA = styled(Button)`
         border-width: 2px;
     }
     @media (max-width: 500px) {
-        margin-top: 15px;
+        margin-top: 10px;
         padding: 13px 10px;
         &:active {
             padding: 10px 5px;
-            margin-top: 18px;
+            margin-top: 13px;
         }
     }
 `;
 
 const Row = styled.span`
     filter: drop-shadow(1px 1px 0px black);
+    margin: 5px;
     @media (max-width: 1000px) {
         font-size: 1.5rem;
     }
@@ -87,24 +89,7 @@ const Row = styled.span`
     }
     @media (max-width: 500px) {
         font-size: 0.9rem;
-    }
-    @media (max-width: 450px) {
-        //font-size: 0.6rem;
-    }
-`;
-
-const Script = styled.span`
-    font-family: "League Script", serif;
-    font-weight: bold;
-    font-size: 4rem;
-    @media (max-width: 1000px) {
-        font-size: 3.5rem;
-    }
-    @media (max-width: 800px) {
-        font-size: 2.5rem;
-    }
-    @media (max-width: 450px) {
-        font-size: 1.75rem;
+        margin: 3px;
     }
 `;
 
@@ -113,36 +98,25 @@ const CTAClick = (url, update) => () => {
     update(url);
 }
 
-export const LandingFirstTile = () => {
+export const FirstTile = () => {
+
+    useEffect(() => {window.scrollTo(0, 0)},[]);
 
     const { updateCurrentURL } = useURL();
 
-    return <LandingTileWrap>
-            <TopLogo src={logo} draggable="false"/>
-            <Gallery/>
-            <TextWrap>
-            <Row> 
-                WE SUSTAINABLY PRODUCE
-                <Script draggable="false">&nbsp;timeless&nbsp;</Script>
+    return <ContactWrapper>
+        <TopLogo src={logo}/>
+        <Hero src={hero}/>
+        <TextWrap>
+            <Row>
+                THE FOLLOWING ARE SAMPLE PRODUCTS
             </Row> 
             <Row>
-                WOODEN PIECES FROM
-                <Script draggable="false">&nbsp;revitalized&nbsp;</Script>
-                WOOD
+                FOR MORE INFORMATION AND PRICING
             </Row>
-            <Row>
-                BYPRODUCTS, BRINGING THE
-                <Script draggable="false">&nbsp;heart&nbsp;</Script>
-                OF THE
-            </Row>
-            <Row>
-                FOREST TO THE
-                <Script draggable="false">&nbsp;heart&nbsp;</Script> 
-                OF YOUR HOME.
-            </Row>
-            <Link to="/our-products" onClick={CTAClick("/our-products", updateCurrentURL)}>
-                <CTA $light>SEE OUR GALLERY</CTA>
+            <Link to="/contact-us" onClick={CTAClick("/contact-us", updateCurrentURL)}>
+                <CTA $light={true}>CONTACT US</CTA>
             </Link>
         </TextWrap>
-    </LandingTileWrap>  
+    </ContactWrapper>
 };

@@ -30,3 +30,22 @@ export const Button = styled.button`
         color: ${props => props.$light ? "black" : "white"};
     }
 `;
+
+export const TopLogo = styled.img`
+    position: absolute;
+    z-index: 1;
+    transform: translate(-50%, 0);
+    top: 15px;
+    left: 50%;
+    width: 10%;
+
+    @media (max-width: 1000px) {
+        width: 20%;
+    }
+    @media (max-width: 600px) {
+        width: 30%;
+    }
+    @media (max-width: 450px) {
+        width: 25%;
+    }
+`; 

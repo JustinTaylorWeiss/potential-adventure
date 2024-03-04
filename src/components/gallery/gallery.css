@@ -1,0 +1,21 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.myBullet {
+    background-color: rgba(255,255,255,0.5) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.myBullet:hover {
+    background-color: rgba(255,255,255, 0.75) !important;
+}
+.myBullet:active {
+    background-color: rgba(255,255,255, 1) !important;
+}
+.active {
+    background-color: rgba(255,255,255, 1) !important;
+}
+
+.imgContainer > img {
+    pointer-events: none !important;
+    object-fit: cover !important;
+}

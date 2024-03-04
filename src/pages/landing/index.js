@@ -1,12 +1,11 @@
 import { LandingFirstTile } from "./1First";
 import { LandingAboutTile } from "./2About";
-import { LandingWood } from "./3Wood";
-import { FooterWrapper } from "./4Footer";
+import { LandingWhatTile } from "./3What";
+import { LandingWhereTile } from "./4Where";
 
 export const Landing = () => <>
     <LandingFirstTile/>
     <LandingAboutTile/>
-    <LandingWood/>
+    <LandingWhatTile/>
+    <LandingWhereTile/>
 </>;
-
-export const Footer = () => <FooterWrapper/>

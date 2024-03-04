@@ -2,7 +2,7 @@ import { styled, keyframes, css } from "styled-components";
 import { Link } from "react-router-dom";
 import background from './assets/menuWood.jpg';
 import CloseIcon from '@mui/icons-material/Close';
-import { useEffect, useState } from "react";
+import { useURL } from "../contexts/useURL";
 
 const menuSlideIn = keyframes`
     0% { left: -500px }
@@ -14,17 +14,12 @@ const menuSlideOut = keyframes`
     0% { left: 0px }
 `;
 
-const closeSpin = keyframes`
-    0% {transform: rotate(-360deg);}
-    100% {transform: rotate(0deg);}
-`;
-
 const MenuWrap = styled.div`
     position: absolute;
     width: 500px;
     height: 100%;
-    z-index: 2;
-    left: ${props => props.$close ? "-500px" : "0"}; //If menu is closed put off screen
+    z-index: 3;
+    left: ${props => props.$close ? "-550px" : "0"}; //If menu is closed put off screen
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -37,14 +32,10 @@ const MenuWrap = styled.div`
     animation: ${props => props.$close ? menuSlideOut : menuSlideIn}; //If menu is closed move to off screen 
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
-`;
 
-const whiteToBlack = keyframes`
-    0% {
-        color: white;
-    }
-    100% {
-        color: black;
+    @media (max-width: 600px) {
+        width: 100%;
+        left: ${props => props.$close ? "-129%" : "0"};
     }
 `;
 
@@ -94,9 +85,6 @@ const ListItem = styled(Link)`
     &:hover {
         cursor: ${props => props.$highlight ? "default" : "pointer"};
     }
-
-    //"#e0db72"
-
     // Underline Hover
     &:before {
         content: "";
@@ -117,22 +105,13 @@ const ListItem = styled(Link)`
     }
 `;
 
-//animation: ${closeSpin};
-//animation-duration: 0.5s;
-//animation-timing-function: ease-in-out;
-
 export const Menu = ({menuClick, close}) => {
 
-    const [currentURL, updateCurrentURL] = useState("/");
+    const { currentURL, updateCurrentURL }  = useURL();
 
-    useEffect(() => {
-        updateCurrentURL(window.location.pathname)
-    }, [])
-
-    const linkClick = (url) => () => {
-        if(url !== "/") {
-            updateCurrentURL(url)
-        }
+    const linkClick = (newURL) => () => {
+        updateCurrentURL(newURL)
+        document.getElementById("AppWrap").scrollTo(0, 0);
         menuClick();
     }
 
@@ -140,8 +119,9 @@ export const Menu = ({menuClick, close}) => {
         <Close sx={{ fontSize: 45, '&:active': { fontSize: 40} }} onClick={() => menuClick()}/>
         <LinkList>
             {
-                [["HOME", "/"], ["OUR STORY", "/our-story"], ["OUR PRODUCTS", "/our-products"], ["CONTACT US", "/contact-us"], ].map(([location, url], i) => {
+                [["HOME", "/"], ["OUR PRODUCTS", "/our-products"], ["CONTACT US", "/contact-us"], ].map(([location, url], i) => {
                     return <ListItem 
+                        draggable={false}
                         key={`ListItem-${i}`}
                         to={url}
                         onClick={linkClick(url)}
@@ -152,5 +132,4 @@ export const Menu = ({menuClick, close}) => {
         </LinkList>
     </MenuWrap>
 };
-
-//["Shop", "/shop"]
+//["OUR STORY", "/our-story"],
