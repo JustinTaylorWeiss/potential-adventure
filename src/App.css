@@ -6,11 +6,11 @@ html {
     margin: env(safe-area-inset);
     padding: env(safe-area-inset);
     scroll-behavior: smooth;
-    font-family: "roboto", sans-serif;
+    font-family: "Inconsolata", sans-serif;
     font-weight: 400;
     letter-spacing: 0.3rem;
     font-size: 0.7rem;
-    color: black;
+    color: #101012;
     overflow-y: scroll;
     white-space: normal;
     overflow-x: hidden;

@@ -9,87 +9,85 @@ import { useEffect } from "react";
 const ContactWrapper = styled.div`
     position: relative;
     width: 100vw;
+    height: 50vh;
+    background-image: url(${hero});
     font-size: 2.5rem;
     margin: 0;
     padding: 0;
     font-weight: 400;
-    color: white;
+    color: oldlace;
+    @media (max-width: 800px) {
+        height: 40vh;
+    }
 `;
-
-const Hero = styled.img`
-    width: 100vw;
-`;
-
 
 const TextWrap = styled.div`
     position: absolute;
     width: 80%;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media (max-width: 600px) {
-        top: 60%;
-    }
 `;
 
 const CTA = styled(Button)`
     margin-top: 30px;
+    background-color: oldlace;
+    border-color: oldlace;
+    font-size: 1.5rem;
+    color: #101012;
+    padding: 15px 30px;
     &:active {
-        padding: 20px 15px;
+        padding: 10px 20px;
         margin-top: 35px;
         margin-bottom: 5px;
     }
     @media (max-width: 1000px) {
+        letter-spacing: 0.2rem;
+    }
+    @media (max-width: 800px) {
         margin-top: 20px;
-        font-size: 1.2rem;
-        padding: 20px 20px;
+        letter-spacing: 0.1rem;
         &:active {
-            padding: 15px 15px;
             margin-top: 25px;
         }
     }
-    @media (max-width: 800px) {
-        font-size: 1rem;
-        letter-spacing: 0.2rem;
-        padding: 15px 10px;
-        &:active {
-            padding: 10px 5px;
-        }
-    }
     @media (max-width: 600px) {
-        font-size: 0.8rem;
-        border-width: 2px;
-    }
-    @media (max-width: 500px) {
         margin-top: 10px;
-        padding: 13px 10px;
+        padding: 10px 20px;
+        font-size: 1rem;
         &:active {
-            padding: 10px 5px;
-            margin-top: 13px;
+            padding: 5px 10px;
+            margin-top: 15px;
         }
+    }
+    @media (max-width: 450px) {
+        font-size: 0.75rem;
     }
 `;
 
 const Row = styled.span`
-    filter: drop-shadow(1px 1px 0px black);
+    font-family: "Phudu";
+    font-weight: 1000;
+    font-size: 5rem;
     margin: 5px;
     @media (max-width: 1000px) {
-        font-size: 1.5rem;
+        font-size: 4rem;
     }
     @media (max-width: 800px) {
-        font-size: 1rem;
+        font-size: 3rem;
     }
     @media (max-width: 600px) {
-        filter: drop-shadow(0.5px 0.5px 0px black);
-        letter-spacing: 0.1rem;
+        font-size: 2.5rem;
     }
-    @media (max-width: 500px) {
-        font-size: 0.9rem;
-        margin: 3px;
+    @media (max-width: 550px) {
+        font-size: 2rem;
+    }
+    @media (max-width: 450px) {
+        letter-spacing: 0.1rem;
     }
 `;
 
@@ -106,8 +104,39 @@ export const FirstTile = () => {
 
     return <ContactWrapper>
         <TopLogo src={logo}/>
-        <Hero src={hero}/>
         <TextWrap>
+            <Row>
+                TURNING WOOD BYPRODUCTS
+            </Row> 
+            <Row>
+                INTO TIMELESS PIECES
+            </Row>
+            <Link to="/contact-us" onClick={CTAClick("/contact-us", updateCurrentURL)}>
+                <CTA>CONTACT US FOR MORE INFO</CTA>
+            </Link>
+        </TextWrap>
+    </ContactWrapper>
+};
+
+/*
+<TextWrap>
+            <Row>
+                WE SUSTAINABLY PRODUCE TIMELESS
+            </Row> 
+            <Row>
+                WOODEN PIECES FROM REVITALIZED WOOD
+            </Row>
+            <Row>
+                BYPRODUCTS, BRINGING THE HEART OF THE
+            </Row>
+            <Row>
+                FOREST TO THE HEART OF YOUR HOME.
+            </Row>
+            <Link to="/contact-us" onClick={CTAClick("/contact-us", updateCurrentURL)}>
+                <CTA>CONTACT US</CTA>
+            </Link>
+        </TextWrap>
+<TextWrap>
             <Row>
                 THE FOLLOWING ARE SAMPLE PRODUCTS
             </Row> 
@@ -115,8 +144,7 @@ export const FirstTile = () => {
                 FOR MORE INFORMATION AND PRICING
             </Row>
             <Link to="/contact-us" onClick={CTAClick("/contact-us", updateCurrentURL)}>
-                <CTA $light={true}>CONTACT US</CTA>
+                <CTA>CONTACT US</CTA>
             </Link>
         </TextWrap>
-    </ContactWrapper>
-};
+*/

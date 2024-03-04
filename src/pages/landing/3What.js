@@ -6,20 +6,18 @@ import plank from "./assets/plank.png";
 import board from "./assets/board.png";
 import { useMediaQuery } from 'react-responsive';
 
+
 const AboutWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr;
     align-items: center;
     justify-content: center;
     font-size: 1.75rem;
     padding: 20px 0;
-    width: 40%;
+    width: 50%;
     margin: auto;
     margin-bottom: 80px;
-    @media (max-width: 2500px) {
-        width: 50%;
-    }
     @media (max-width: 2000px) {
         width: 60%;
     }
@@ -34,9 +32,6 @@ const AboutWrapper = styled.div`
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
     }
-    @media (max-width: 500px) {
-        width: 95%;
-    }
 `;
 
 const TextWrap = styled.div`
@@ -48,67 +43,50 @@ const TextWrap = styled.div`
     width: 100%;
     height: 100%;
     @media (max-width: 1200px) {
-        align-items: flex-start;
+        align-items: center;
         width: auto;
         margin: auto;
-    }
-    @media (max-width: 700px) {
-        width: 100%;
     }
 `;
 
 const Title = styled.div`
-    filter: drop-shadow(1px 1px 0.5px black);
+    font-weight: 1000;
     font-size: 2.5rem;
     width: 100%;
+    margin-bottom: 30px;
     text-align: left;
     @media (max-width: 1200px) {
-        margin-bottom: 40px;
         text-align: center;
-    }
-    @media (max-width: 500px) {
-        font-size: 2rem;
     }
 `;
 
 const Subtitle = styled.div`
-    filter: drop-shadow(1px 1px 0.5px black);
+    font-weight: 800;
     margin: 0 0 10px 40px;
     font-size: 2rem;
     width: 100%;
     text-align: left;
     @media (max-width: 1200px) {
-        filter: drop-shadow(0.5px 0.5px 0.5px black);
-        width: auto;
+        text-align: center;
+        margin-left: 0;
         margin-bottom: 20px;
     }
-    @media (max-width: 700px) {
-        filter: drop-shadow(0px 0px 0px black);
-        font-size: 1.5rem;
-        font-weight: 800;
-    }
     @media (max-width: 500px) {
-        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+        font-size: 1.7rem;
     }
 `;
 
 const Row = styled.span`
-    filter: drop-shadow(1px 1px 0.5px black);
+    font-weight: 600;
     margin: 8px 0;
     margin-left: 50px;
     width: 100%;
     font-size: 1.5rem;
     @media (max-width: 1200px) {
-        filter: drop-shadow(0px 0px 0px black);
         width: auto;
-    }
-    @media (max-width: 700px) {
-        letter-spacing: 0.1rem;
-        font-weight: 800;
-        font-size: 1rem;
-    }
-    @media (max-width: 500px) {
-        font-size: 0.8rem;
+        margin-left: 0;
+        text-align: center;
     }
 `;
 
@@ -124,6 +102,11 @@ const IMG = styled.img`
     }
 `;
 
+const SubRow = styled.div`
+    display: block;
+    line-height: 200%;
+`;
+
 const Column = styled.div`
     display: flex;
     flex-direction: column;
@@ -136,28 +119,37 @@ const Column = styled.div`
     }
 `;
 
-export const LandingWhatTile = () => {
+const normalConstructionText = [`Rough cut timbers`, `up to 12"x12"x20'`, `Sheathing`, `Lagging`, `Shoring Lumber`, `Dimentional Lumber`, `Plywood`, `OSHA Plank`, `Crane Mats`, `Trailer Decking`,]
+const ConstructionTextWithHyphen = [` - Rough cut timbers`, `up to 12"x12"x20'`, ` - Sheathing`, ` - Lagging`, ` - Shoring Lumber`, ` - Dimentional Lumber`, ` - Plywood`, ` - OSHA Plank`, ` - Crane Mats`, ` - Trailer Decking`,]
 
-    const { updateCurrentURL } = useURL();
+const normalHardwoodText = [`Charcuterie Boards`, `Slabs`, `Tables`];
+const hardwoodTextWithHyphen = [` - Charcuterie Boards`, ` - Slabs`, ` - Tables`];
+
+export const LandingWhatTile = () => {
 
     return <>
         <AboutWrapper>
-            <Title>OUR WOOD</Title>
-            <Spacer/>
             <TextWrap>
+                <Title>OUR WOOD</Title>
                 <Subtitle>HEAVY CONSTRUCTION LUMBER</Subtitle>
-                <Row>- SHEATHING / LAGGING / SHORING LUMBER</Row>
-                <Row>- DIMENSIONAL LUMBER</Row>
-                <Row>- PLYWOOD</Row>
-                <Row>- OSHA PLANK</Row>
-                <Row>- CRANE MATS</Row>
-                <Row>- TRAILER DECKING</Row>
-                <Row>- ROUGH CUT TIMBERS UP TO 12" x 12"x 20'</Row>
+                {
+                    (useMediaQuery({ query:'(max-width: 1200px)'})
+                        ? normalConstructionText
+                        : ConstructionTextWithHyphen
+                    ).map((text, i) => (
+                        <Row style={{marginBottom: i === 0 ? "-6px" : "8px"}} key={`What-C-Row-${i}`}>{text}</Row>
+                    ))
+                }
                 <Spacer $height="40px"/>
                 <Subtitle>HARDWOOD PRODUCTS</Subtitle>
-                <Row>- CHARCUTERIE BOARDS</Row>
-                <Row>- SLABS</Row>
-                <Row>- TABLES</Row>
+                {
+                    (useMediaQuery({ query:'(max-width: 1200px)'})
+                        ? normalHardwoodText
+                        : hardwoodTextWithHyphen
+                    ).map((text, i) => (
+                        <Row key={`What-H-Row-${i}`}>{text}</Row>
+                    ))
+                }
             </TextWrap>
             <Column>
                 <IMG src={board}/>

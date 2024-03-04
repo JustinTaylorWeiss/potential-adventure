@@ -9,16 +9,17 @@ export const URLProvider = ({ children }) => {
     const [currentURL, updateCurrentURL] = useState("/");
 
     useEffect(() => {
-        updateCurrentURL(window.location.pathname)
+        const url = window.location.pathname.replace("/potential-adventure", "");
+        updateCurrentURL(
+            url === ""
+                ? "/"
+                : url
+        );
     }, []);
-
-    const fetchCurrentURL = () => {
-        updateCurrentURL(window.location.pathname);
-    };
 
     const value = {
         currentURL,
-        updateCurrentURL, fetchCurrentURL, 
+        updateCurrentURL, 
     };
     return <URLContext.Provider value={value}>{children}</URLContext.Provider>
 };

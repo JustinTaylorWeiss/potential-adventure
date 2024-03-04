@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { useURL } from "../contexts/useURL";
 
 const NavWrap = styled.div`
     position: absolute;
@@ -8,7 +8,7 @@ const NavWrap = styled.div`
     top: 10px;
     z-index: 2;
     font-size: 40px;
-    color: white;
+    color: oldlace;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -18,8 +18,7 @@ const Menu = styled(MenuIcon)`
     width: 100vw;
     height: 100vw;
     margin: 0 20px;
-    color: white;
-    filter: drop-shadow(1px 1px 0.5px black);
+    color: ${props => props.$isContact ? "#101012" : "oldlace"};
     &:hover {
         cursor: pointer;
     }
@@ -28,8 +27,12 @@ const Menu = styled(MenuIcon)`
     }
 `;
 
-export const Nav = ({menuClick}) => (
-    <NavWrap>
-        <Menu sx={{ fontSize: 45, '&:active': { fontSize: 40} }} onClick={() => menuClick()}/>
+export const Nav = ({menuClick}) => {
+
+    const { currentURL } = useURL();
+    const isContact = (currentURL === "/contact-us");
+
+    return <NavWrap>
+        <Menu sx={{ fontSize: 45, '&:active': { fontSize: 40} }} $isContact={isContact} onClick={() => menuClick()}/>
     </NavWrap>  
-);
+};

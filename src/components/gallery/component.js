@@ -49,7 +49,7 @@ class MyBulletlessGallery extends Component {
             showFullscreenButton={false} 
             showNav={false} 
             slideDuration={800} 
-            slideInterval={5000} 
+            slideInterval={8000} 
             autoPlay={true} 
             showBullets={false} 
             showPlayButton={false} 
@@ -60,7 +60,7 @@ class MyBulletlessGallery extends Component {
 
 export const GalleryWrapper = () => <>
     {
-        useMediaQuery({ query:'(max-width: 525px)'}) 
+        useMediaQuery({ query:'(max-width: 550px)'}) 
             ? <MyBulletlessGallery/>
             : <MyGallery/> 
     }

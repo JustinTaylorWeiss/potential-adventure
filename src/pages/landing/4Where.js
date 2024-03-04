@@ -13,12 +13,9 @@ const AboutWrapper = styled.div`
     justify-content: center;
     font-size: 1.75rem;
     padding: 20px 0;
-    width: 40%;
+    width: 50%;
     margin: auto;
     margin-bottom: 100px;
-    @media (max-width: 2500px) {
-        width: 50%;
-    }
     @media (max-width: 2000px) {
         width: 60%;
     }
@@ -48,16 +45,13 @@ const TextWrap = styled.div`
         align-items: flex-start;
         width: auto;
         margin: auto;
+        align-items: center;
         margin-top: 0;
     }
-    @media (max-width: 700px) {
-        align-items: center;
-    }
-    
 `;
 
 const Title = styled.div`
-    filter: drop-shadow(1px 1px 0.5px black);
+    font-weight: 1000;
     font-size: 2.5rem;
     width: 100%;
     text-align: left;
@@ -66,38 +60,16 @@ const Title = styled.div`
         margin-bottom: 20px;
         text-align: center;
     }
-    @media (max-width: 500px) {
-        font-size: 2rem;
-    }
-`;
-
-const Subtitle = styled.div`
-    filter: drop-shadow(1px 1px 0.5px black);
-    margin: 0 0 10px 40px;
-    font-size: 2rem;
-    width: 100%;
-    text-align: left;
-    @media (max-width: 1200px) {
-        width: auto;
-    }
-    @media (max-width: 700px) {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
 `;
 
 const Row = styled.span`
-    filter: drop-shadow(1px 1px 0.5px black);
+    font-weight: 600;
     margin: 8px 0;
     margin-left: 50px;
     width: 100%;
     font-size: 1.5rem;
     @media (max-width: 1200px) {
         width: auto;
-    }
-    @media (max-width: 700px) {
-        filter: drop-shadow(0.5px 0.5px 0.5px black);
-        font-size: 1rem;
         margin-left: 0;
     }
 `;
@@ -125,8 +97,8 @@ const Column = styled.div`
     }
 `;
 
-const placeNames = ["- THE BRONX", "- BROOKLYN", "- MANHATTAN", "- QUEENS", "- STATEN ISLAND", "- LONG ISLAND", "- NEW JERSEY"];
-const placeNameNoHyphen = ["THE BRONX", "BROOKLYN", "MANHATTAN", "QUEENS", "STATEN ISLAND", "LONG ISLAND", "NEW JERSEY"];
+const placeNames = ["- The Bronx", "- Brooklyn", "- Manhattan", "- Queens", "- Staten Island", "- Long Island", "- New Jersey"];
+const placeNameNoHyphen = ["The Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island", "Long Island", "New Jersey"];
 
 export const LandingWhereTile = () => {
 
@@ -137,7 +109,7 @@ export const LandingWhereTile = () => {
             <TextWrap>
                 <Title>WHERE WE DELIVER</Title>
                 {
-                    (useMediaQuery({ query:'(max-width: 700px)'}) 
+                    (useMediaQuery({ query:'(max-width: 1200px)'}) 
                         ? placeNameNoHyphen
                         : placeNames
                     ).map((text, i) => (

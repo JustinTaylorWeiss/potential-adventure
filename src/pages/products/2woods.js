@@ -25,19 +25,17 @@ const AboutWrapper = styled.div`
 `;
 
 const SubTitle = styled.h3`
-    font-weight: 400;
+    font-weight: 800;
     letter-spacing: 0.3rem;
     font-size: 2.5rem;
     margin: 15px 0 0 50px;
-    color: black;
+    color: #101012;
     width: 100%;
     max-width: 2000px;
-    filter: drop-shadow(1px 1px 0.5px black);
     @media (max-width: 550px) {
         font-size: 2rem;
     }
     @media (max-width: 475px) {
-        filter: drop-shadow(0.5px 0.5px 0.5px black);
         letter-spacing: 0.2rem;
         margin-left: 30px;
         font-size: 1.5rem;
@@ -58,7 +56,7 @@ const Row = styled.div`
     padding: 5px;
     width: 100%;
     overflow-y: scroll;
-    scrollbar-color: black transparent;
+    scrollbar-color: #101012 transparent;
 `;
 
 const Arrow = styled.img`
@@ -66,7 +64,7 @@ const Arrow = styled.img`
     position: absolute;
     top: 50%;
     z-index: 2;
-    color: white;
+    color: oldlace;
     padding: 30px 0;
     height: 30%;
     min-height: 20px;
@@ -74,7 +72,6 @@ const Arrow = styled.img`
     border-radius: 4%;
     ${props => props.$right ? "left: 15px" : "right: 15px"};
     &:hover {
-        background-color: rgba(0, 0, 0, 0.5);
         cursor: pointer;
     }
     @media (max-width: 1300px) {
@@ -90,7 +87,6 @@ const IMG = styled.img`
     box-sizing: border-box;
     width: 40vw;
     margin: 10px;
-    filter: drop-shadow(1px 1px 2px black);
 `;
 
 const arrowClick = (index, sampleImg, right = false) => () => {

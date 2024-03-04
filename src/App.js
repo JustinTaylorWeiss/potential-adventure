@@ -23,7 +23,12 @@ const AppWrap = styled.div`
         overflow-y: ${props => props.$menuOpen ? "hidden" : "scroll"};
         height: 100vh;
         overflow-x: hidden;
-    `;
+`;
+
+const BackgroundWrap = styled.div`
+    background-image: url("./pages/landing/assets/paper.jpg");
+    background-size: 100%;
+`;
 
 const App = () => {
 
@@ -38,18 +43,20 @@ const App = () => {
 
     return <Router basename={process.env.PUBLIC_URL}>
         <AppWrap id="AppWrap" $menuOpen={menuOpen}>
-            <URLProvider>
-                <Nav menuClick={onMenuClick}/>
-                { !firstClick && <Menu menuClick={onMenuClick} close={!firstClick && !menuOpen}/> }
-                { menuOpen && <Blur onClick={onMenuClick}/> }
-                <Routes>
-                    <Route exact path = {"/"}             element={<Landing/>}/>
-                    <Route exact path = {"/our-products"} element={<Products/>}/>
-                    <Route exact path = {"/contact-us"}   element={<Contact/>}/>
-                    <Route path = "*"                     element={<Navigate to="/"/>}/>
-                </Routes>
-                <Footer/>
-            </URLProvider>
+            <BackgroundWrap>
+                <URLProvider>
+                    <Nav menuClick={onMenuClick}/>
+                    { !firstClick && <Menu menuClick={onMenuClick} close={!firstClick && !menuOpen}/> }
+                    { menuOpen && <Blur onClick={onMenuClick}/> }
+                    <Routes>
+                        <Route exact path = {"/"}             element={<Landing/>}/>
+                        <Route exact path = {"/our-products"} element={<Products/>}/>
+                        <Route exact path = {"/contact-us"}   element={<Contact/>}/>
+                        <Route path = "*"                     element={<Navigate to="/"/>}/>
+                    </Routes>
+                    <Footer/>
+                </URLProvider>
+            </BackgroundWrap>
         </AppWrap>
     </Router>
 };

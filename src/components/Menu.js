@@ -19,7 +19,7 @@ const MenuWrap = styled.div`
     width: 500px;
     height: 100%;
     z-index: 3;
-    left: ${props => props.$close ? "-550px" : "0"}; //If menu is closed put off screen
+    left: ${props => props.$close ? "-650px" : "0"}; //If menu is closed put off screen
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -27,7 +27,6 @@ const MenuWrap = styled.div`
     padding-left: 100px;
     background-image: url(${background});
     background-size: cover;
-    filter: drop-shadow(0px 0px 10px black);
 
     animation: ${props => props.$close ? menuSlideOut : menuSlideIn}; //If menu is closed move to off screen 
     animation-duration: 0.5s;
@@ -35,19 +34,19 @@ const MenuWrap = styled.div`
 
     @media (max-width: 600px) {
         width: 100%;
-        left: ${props => props.$close ? "-129%" : "0"};
+        padding-left: 0;
+        left: ${props => props.$close ? "-120%" : "0"};
     }
 `;
 
 const Close = styled(CloseIcon)`
-    color: black;
+    color: #101012;
     position: absolute;
     top: 10px;
     right: 0;
     margin: 0 20px;
     border-radius: 10px;
     z-index: 0;
-    filter: drop-shadow(1px 1px 0.5px black);
     &:hover {
         cursor: pointer;
     }
@@ -64,24 +63,27 @@ const LinkList = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    font-family: "roboto", sans-serif;
     letter-spacing: 0.5rem;
     font-size: 1.75rem;
     pointer-events: none;
     z-index: 5;
+    @media (max-width: 600px) {
+        width: 100%;
+        align-items: center;
+    }
 `;
 
 const ListItem = styled(Link)`
     display: inline-block;
     pointer-events: auto;
-    margin: 10px 0;
+    margin: 20px 0;
     z-index: 5;
-    font-size: 1.75rem;
+    font-size: 2.5rem;
+    font-weight: 1000;
     position: relative;
     text-decoration: none;
     user-select: none;
-    color: ${props => props.$highlight ? "white" : "black"};
-    filter: drop-shadow(1px 1px 0.5px black);
+    color: ${props => props.$highlight ? "#d49d04" : "#101012"};
     &:hover {
         cursor: ${props => props.$highlight ? "default" : "pointer"};
     }
@@ -91,21 +93,17 @@ const ListItem = styled(Link)`
         position: absolute;
         display: block;
         width: 100%;
-        border-radius: 40%;
-        height: 1px;
-        bottom: -2px;
+        border-radius: 30%;
+        height: 5px;
+        bottom: -7px;
         left: 0;
-        background-color: black;
+        background-color: #101012;
         transform: scaleX(0);
         transform-origin: top left;
         transition: transform 0.3s ease;
     }
     &:hover::before {
         ${props => props.$highlight ? "" : "transform: scaleX(1)"};
-    }
-    @media (max-width: 700px) {
-        filter: drop-shadow(0px 0px 0.5px black);
-        font-weight: bold;
     }
 `;
 

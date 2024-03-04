@@ -1,7 +1,5 @@
-import { FirstTile } from "./1FirstTile";
-import { InfoTile } from "./2InfoTile";
+import { InfoTile } from "./1InfoTile";
 
 export const Contact = () => <>
-    <FirstTile/>
     <InfoTile/>
 </>;

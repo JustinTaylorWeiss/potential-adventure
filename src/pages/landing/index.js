@@ -5,7 +5,6 @@ import { LandingWhereTile } from "./4Where";
 
 export const Landing = () => <>
     <LandingFirstTile/>
-    <LandingAboutTile/>
     <LandingWhatTile/>
     <LandingWhereTile/>
 </>;

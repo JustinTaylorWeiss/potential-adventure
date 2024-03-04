@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "./assets/blackLogo.png";
 import line from "./assets/line.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -12,52 +11,25 @@ const AboutWrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    padding: 0 0 0 0;
-    background-color: "white";
+    padding: 0;
 `;
 
 const Bar = styled.img`
     width: 80%;
     height: 10px;
-    filter: drop-shadow(1px 1px 0.5px black);
     @media (max-width: 800px) {
         height: 5px;
     }
 `;
 
-const Logo = styled.img`
-    width: 100%;
-    height: 100%;
-    max-width: 300px;
-    filter: drop-shadow(0.5px 0.5px 0.5px black);
-`;
-
 const Row = styled.div`
-    display: grid;
+    display: flex;
     justify-items: center;
     align-items: center;
     grid-template-columns: 2fr 5fr 2fr;
     grid-template-rows: 1fr;
     width: 70%;
-    margin: 60px 0;
-    @media (max-width: 1200px) {
-        grid-template-columns: 1fr 3fr;
-    }
-    @media (max-width: 800px) {
-        grid-template-columns: 2fr 3fr;
-    }
-    @media (max-width: 500px) {
-        grid-template-columns: 1fr;
-        margin: 20px;
-    }
-`;
-
-const InnerRow = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    margin: 30px 0;
 `;
 
 const Column = styled.div`
@@ -67,64 +39,57 @@ const Column = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media (max-width: 500px) {
-        width: auto;
-        font-size: 2rem;
-    }
 `;
 
-const LI = styled.a`
+const EXLink = styled.a`
     font-size: 1.5rem;
-    margin: 1px 0;
+    margin: 3px 0;
+    font-weight: 800;
     width: 100%;
     text-align: right;
     letter-spacing: 0.2rem;
     text-decoration: none;
-    color: black;
-    filter: drop-shadow(0.5px 0.5px 0.1px black);
+    color: #101012;
     &:hover {
-        color: white;
+        color: #d49d04;
     }
-    @media (max-width: 2000px) {
-        font-size: 1.2rem;
-    }
-    @media (max-width: 1800px) {
+    @media (max-width: 700px) {
         font-size: 1rem;
-    }
-    @media (max-width: 1600px) {
-        font-size: 0.8rem;
-    }
-    @media (max-width: 1300px) {
-        font-size: 0.7rem;
     }
     @media (max-width: 500px) {
-        font-size: 1rem;
-        text-align: center;
-        margin: 8px 0;
+        font-size: 0.8rem;
+    }
+    @media (max-width: 450px) {
+        font-size: 0.7rem;
     }
 `;
 
-const FootLink = styled(Link)`
-    font-size: 0.9rem;
-    filter: drop-shadow(0.5px 0.5px 0.1px black);
+const INLink = styled(Link)`
+    font-size: 1.5rem;
+    margin: 3px 0;
+    font-weight: 800;
+    width: 100%;
+    text-align: "left";
+    letter-spacing: 0.2rem;
     text-decoration: none;
-    color: ${props => props.$highlight ? "white" : "black"};
+    color: #101012;
     &:hover {
-        ${props => props.$highlight ? "cursor: default" : ""};
+        color: #d49d04;
     }
-    @media (min-width: 2000px) {
-        font-size: 1.5rem;
+    @media (max-width: 700px) {
+        font-size: 1rem;
     }
-    @media (min-width: 700px) {
-        filter: drop-shadow(0px 0px 0px black);
-        font-weight: 800;
+    @media (max-width: 500px) {
+        font-size: 0.8rem;
+    }
+    @media (max-width: 450px) {
+        font-size: 0.7rem;
     }
 `;
 
 const Spacer = styled.span`
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     cursor: default;
-    filter: drop-shadow(0.5px 0.5px 0.1px black);
     @media (min-width: 2000px) {
         font-size: 1.5rem;
     }
@@ -142,6 +107,59 @@ export const Footer = () => {
     }
 
     return <AboutWrapper>
+        <Bar src={line}/>
+        <Row>
+            <Column>
+                <INLink to="/" onClick={linkClick("/")} draggable={false}>
+                    HOME
+                </INLink>
+                <INLink to="/contact-us" onClick={linkClick("/contact-us")} draggable={false}>
+                    CONTACT US
+                </INLink>
+                <INLink to="/our-products" onClick={linkClick("/our-products")} draggable={false}>
+                    OUR PRODUCTS
+                </INLink>
+            </Column>
+            <Column>
+                <EXLink href="tel:17184862800" draggable={false}>
+                    (718)486-2800
+                </EXLink>
+                <EXLink href="mailto:michelle@infinitylumber.com" draggable={false}>
+                    MICHELLE@INFINITYLUMBER.COM
+                </EXLink>
+                <EXLink target="_blank" href="https://www.google.com/maps/place/Infinity+Building+Supplies/@40.7263429,-73.9341559,17z/data=!4m6!3m5!1s0x89c25eb51cebd44f:0x9511fe7d92b5752b!8m2!3d40.7260486!4d-73.9338672!16s%2Fg%2F1thq1mm2?entry=ttu" draggable={false}>
+                    551 STEWART AVE, BROOKLYN
+                </EXLink>
+            </Column>
+        </Row>
+    </AboutWrapper>
+};
+
+//, ["-"], ["OUR STORY", "/our-story"]
+
+
+/*
+const Logo = styled.img`
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+`;
+const FootLink = styled(Link)`
+    font-size: 1.2rem;
+    font-weight: 1000;
+    text-decoration: none;
+    width: 100%;
+    color: ${props => props.$highlight ? "#d49d04" : "black"};
+    &:hover {
+        ${props => props.$highlight ? "cursor: default" : ""};
+    }
+    @media (min-width: 2000px) {
+        font-size: 1.5rem;
+    }
+    @media (max-width: 700px) {
+    }
+`;
+<AboutWrapper>
         <Bar src={line}/>
         <Row>
             {
@@ -173,11 +191,9 @@ export const Footer = () => {
                     MICHELLE@INFINITYLUMBER.COM
                 </LI>
                 <LI target="_blank" href="https://www.google.com/maps/place/Infinity+Building+Supplies/@40.7263429,-73.9341559,17z/data=!4m6!3m5!1s0x89c25eb51cebd44f:0x9511fe7d92b5752b!8m2!3d40.7260486!4d-73.9338672!16s%2Fg%2F1thq1mm2?entry=ttu">
-                    551 STEWART AVE, BROOKLYN, NY
+                    551 STEWART AVE, BROOKLYN
                 </LI>
             </Column>
         </Row>
-    </AboutWrapper>
-};
-
-//, ["-"], ["OUR STORY", "/our-story"]
+    </AboutWrapper> 
+*/
