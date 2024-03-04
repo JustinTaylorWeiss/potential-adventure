@@ -55,10 +55,27 @@ const Title = styled.div`
     font-size: 2.5rem;
     width: 100%;
     text-align: left;
-    padding-bottom: 15px;
+    margin-bottom: 30px;
     @media (max-width: 1200px) {
         margin-bottom: 20px;
         text-align: center;
+    }
+`;
+
+const Subtitle = styled.div`
+    font-weight: 800;
+    margin: 0 0 10px 40px;
+    font-size: 2rem;
+    width: 100%;
+    text-align: left;
+    @media (max-width: 1200px) {
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    @media (max-width: 500px) {
+        letter-spacing: 0.2rem;
+        font-size: 1.7rem;
     }
 `;
 
@@ -108,6 +125,7 @@ export const LandingWhereTile = () => {
         <AboutWrapper>
             <TextWrap>
                 <Title>WHERE WE DELIVER</Title>
+                <Subtitle>DAY OR NIGHT</Subtitle>
                 {
                     (useMediaQuery({ query:'(max-width: 1200px)'}) 
                         ? placeNameNoHyphen

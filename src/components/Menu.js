@@ -121,7 +121,7 @@ export const Menu = ({menuClick, close}) => {
         <Close sx={{ fontSize: 45, '&:active': { fontSize: 40} }} onClick={() => menuClick()}/>
         <LinkList>
             {
-                [["HOME", "/"], ["OUR PRODUCTS", "/our-products"], ["CONTACT US", "/contact-us"], ].map(([location, url], i) => {
+                [["HOME", "/"], ["CONTACT US", "/contact-us"], ["OUR PRODUCTS", "/our-products"], ].map(([location, url], i) => {
                     return <ListItem 
                         draggable={false}
                         key={`ListItem-${i}`}

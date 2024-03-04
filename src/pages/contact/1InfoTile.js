@@ -151,10 +151,10 @@ export const InfoTile = () => {
         <TopLogo src={logo}/>
         <Grid>
             <TextWrap>
-                <Row> WE DELIVER: </Row> 
+                <Row> BUSINESS HOURS: </Row> 
                 <Row>
                     <Text>
-                        Day and Night
+                        24/7
                     </Text>
                 </Row>
                 <Spacer/>
