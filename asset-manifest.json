@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/potential-adventure/static/css/main.4b9e28b5.css",
-    "main.js": "/potential-adventure/static/js/main.b8c12b6f.js",
+    "main.js": "/potential-adventure/static/js/main.1d3c4463.js",
     "static/media/paper.jpg": "/potential-adventure/static/media/paper.e9c1a526d9236c7a14e8.jpg",
     "static/media/hero.jpg": "/potential-adventure/static/media/hero.7eaa7c556e1d23048501.jpg",
     "static/media/menuWood.jpg": "/potential-adventure/static/media/menuWood.47d59f1cba2bdc0a1590.jpg",
@@ -26,10 +26,10 @@
     "index.html": "/potential-adventure/index.html",
     "static/media/arrow.svg": "/potential-adventure/static/media/arrow.3c7e85cd52826cfd5c9df6e96bcee2e3.svg",
     "main.4b9e28b5.css.map": "/potential-adventure/static/css/main.4b9e28b5.css.map",
-    "main.b8c12b6f.js.map": "/potential-adventure/static/js/main.b8c12b6f.js.map"
+    "main.1d3c4463.js.map": "/potential-adventure/static/js/main.1d3c4463.js.map"
   },
   "entrypoints": [
     "static/css/main.4b9e28b5.css",
-    "static/js/main.b8c12b6f.js"
+    "static/js/main.1d3c4463.js"
   ]
 }
