@@ -53,6 +53,8 @@ const Row = styled.span`
     filter: drop-shadow(1px 1px 0.5px black);
     margin: 8px 0;
     @media (max-width: 800px) {
+        filter: drop-shadow(0px 0px 0px black);
+        font-weight: 800;
         font-size: 1.5rem;
     }
     @media (max-width: 700px) {
@@ -60,8 +62,9 @@ const Row = styled.span`
     }
     @media (max-width: 500px) {
         filter: drop-shadow(0.5px 0.5px 0px black);
-        letter-spacing: 0.2rem;
-        font-size: 0.7rem;
+        letter-spacing: 0.1rem;
+        font-weight: 400;
+        font-size: 1rem;
         margin: 4px;
     }
 `;

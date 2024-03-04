@@ -52,6 +52,9 @@ const TextWrap = styled.div`
         width: auto;
         margin: auto;
     }
+    @media (max-width: 700px) {
+        width: 100%;
+    }
 `;
 
 const Title = styled.div`
@@ -75,14 +78,17 @@ const Subtitle = styled.div`
     width: 100%;
     text-align: left;
     @media (max-width: 1200px) {
+        filter: drop-shadow(0.5px 0.5px 0.5px black);
         width: auto;
-    }
-    @media (max-width: 700px) {
-        font-size: 1.5rem;
         margin-bottom: 20px;
     }
+    @media (max-width: 700px) {
+        filter: drop-shadow(0px 0px 0px black);
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
     @media (max-width: 500px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 `;
 
@@ -93,14 +99,16 @@ const Row = styled.span`
     width: 100%;
     font-size: 1.5rem;
     @media (max-width: 1200px) {
+        filter: drop-shadow(0px 0px 0px black);
         width: auto;
     }
     @media (max-width: 700px) {
-        font-size: 0.9rem;
+        letter-spacing: 0.1rem;
+        font-weight: 800;
+        font-size: 1rem;
     }
     @media (max-width: 500px) {
-        filter: drop-shadow(0.5px 0.5px 0.5px black);
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 `;
 

@@ -22,6 +22,7 @@ const Blur = styled.div`
 const AppWrap = styled.div`
         overflow-y: ${props => props.$menuOpen ? "hidden" : "scroll"};
         height: 100vh;
+        overflow-x: hidden;
     `;
 
 const App = () => {

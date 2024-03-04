@@ -48,6 +48,8 @@ const Row = styled.span`
     margin: 10px;
     text-align: left;
     @media (max-width: 700px) {
+        filter: drop-shadow(0px 0px 0px black);
+        font-weight: 800;
         font-size: 1.5rem;
     }
     @media (max-width: 550px) {

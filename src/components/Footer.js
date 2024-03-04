@@ -115,6 +115,10 @@ const FootLink = styled(Link)`
     @media (min-width: 2000px) {
         font-size: 1.5rem;
     }
+    @media (min-width: 700px) {
+        filter: drop-shadow(0px 0px 0px black);
+        font-weight: 800;
+    }
 `;
 
 const Spacer = styled.span`

@@ -103,6 +103,10 @@ const ListItem = styled(Link)`
     &:hover::before {
         ${props => props.$highlight ? "" : "transform: scaleX(1)"};
     }
+    @media (max-width: 700px) {
+        filter: drop-shadow(0px 0px 0.5px black);
+        font-weight: bold;
+    }
 `;
 
 export const Menu = ({menuClick, close}) => {
