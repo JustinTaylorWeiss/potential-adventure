@@ -61,7 +61,7 @@ const CTA = styled(Button)`
         }
     }
     @media (max-width: 450px) {
-        font-size: 0.75rem;
+        letter-spacing: 0;
     }
     /*
     @media (max-width: 1000px) {

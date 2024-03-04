@@ -22,6 +22,9 @@ const AboutWrapper = styled.div`
     font-size: 3rem;
     font-weight: bold;
     margin: 50px 0;
+    @media (max-width: 700px) {
+        margin: 20px 0 0 0;
+    }
 `;
 
 const SubTitle = styled.h3`
