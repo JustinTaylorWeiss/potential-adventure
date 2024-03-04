@@ -18,7 +18,7 @@ export const URLProvider = ({ children }) => {
 
     const value = {
         currentURL,
-        updateCurrentURL, fetchCurrentURL
+        updateCurrentURL, fetchCurrentURL, 
     };
     return <URLContext.Provider value={value}>{children}</URLContext.Provider>
 };

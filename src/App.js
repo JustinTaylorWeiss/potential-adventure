@@ -29,22 +29,23 @@ const App = () => {
     const [menuOpen, updateMenuOpen] = useState(false);
     const [firstClick, updateFirstClick] = useState(true);
 
+
     const onMenuClick = () => {
         updateFirstClick(false);
         updateMenuOpen(!menuOpen);
     }
 
-    return <Router>
+    return <Router basename={process.env.PUBLIC_URL}>
         <AppWrap id="AppWrap" $menuOpen={menuOpen}>
             <URLProvider>
                 <Nav menuClick={onMenuClick}/>
                 { !firstClick && <Menu menuClick={onMenuClick} close={!firstClick && !menuOpen}/> }
                 { menuOpen && <Blur onClick={onMenuClick}/> }
                 <Routes>
-                    <Route exact path = "/"             element={<Landing/>}/>
-                    <Route exact path = "/our-products" element={<Products/>}/>
-                    <Route exact path = "/contact-us"   element={<Contact/>}/>
-                    <Route path = "*"                   element={<Navigate to="/"/>}/>
+                    <Route exact path = {"/"}             element={<Landing/>}/>
+                    <Route exact path = {"/our-products"} element={<Products/>}/>
+                    <Route exact path = {"/contact-us"}   element={<Contact/>}/>
+                    <Route path = "*"                     element={<Navigate to="/"/>}/>
                 </Routes>
                 <Footer/>
             </URLProvider>
