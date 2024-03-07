@@ -1,6 +1,6 @@
 import { styled, keyframes, css } from "styled-components";
 import { Link } from "react-router-dom";
-import background from './assets/menuWood.jpg';
+import background from './assets/texture.png';
 import CloseIcon from '@mui/icons-material/Close';
 import { useURL } from "../contexts/useURL";
 

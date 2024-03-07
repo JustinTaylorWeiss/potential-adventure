@@ -166,12 +166,6 @@ export const InfoTile = () => {
                     </TextAnchor>
                 </Row>
                 <Row>
-                    <TextAnchor href="tel:15166504772">
-                        {` (516)650-4772`}
-                        <SmallText>{` - Mobile`}</SmallText>
-                    </TextAnchor>
-                </Row> 
-                <Row>
                     <TextAnchor href="tel:15163820939">
                         {` (516)382-0939`}
                         <SmallText>{` - Mobile`}</SmallText>

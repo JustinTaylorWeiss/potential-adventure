@@ -125,7 +125,6 @@ export const LandingWhereTile = () => {
         <AboutWrapper>
             <TextWrap>
                 <Title>WHERE WE DELIVER</Title>
-                <Subtitle>DAY OR NIGHT</Subtitle>
                 {
                     (useMediaQuery({ query:'(max-width: 1200px)'}) 
                         ? placeNameNoHyphen

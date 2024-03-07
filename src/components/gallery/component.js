@@ -4,6 +4,9 @@ import { Component } from "react";
 import board1 from "../assets/board1.jpg";
 import board2 from "../assets/board2.jpg";
 import slab1 from "../assets/slab1.jpg";
+import plywood from "../assets/plywood.jpg";
+import sixBySix from "../assets/6x6.jpg";
+import twoByFour from "../assets/2x4.jpg";
 import { useMediaQuery } from 'react-responsive'
 
 const images = [
@@ -13,12 +16,27 @@ const images = [
         bulletClass: "myBullet",
     },
     {
+        original: sixBySix,
+        originalClass: "imgContainer",
+        bulletClass: "myBullet",
+    },
+    {
         original: board2,
         originalClass: "imgContainer",
         bulletClass: "myBullet",
     },
     {
+        original: plywood,
+        originalClass: "imgContainer",
+        bulletClass: "myBullet",
+    },
+    {
         original: slab1,
+        originalClass: "imgContainer",
+        bulletClass: "myBullet",
+    },
+    {
+        original: twoByFour,
         originalClass: "imgContainer",
         bulletClass: "myBullet",
     }
