@@ -30,3 +30,6 @@ img {
     -webkit-user-select: none;
     user-select: none;
 }
+:hover {
+    transition: 0.2s ease-in-out;
+}

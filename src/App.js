@@ -43,7 +43,7 @@ const App = () => {
         updateMenuOpen(!menuOpen);
     }
 
-    return <Router basename={process.env.PUBLIC_URL}>
+    return <Router>
         <AppWrap id="AppWrap" $menuOpen={menuOpen}>
             <BackgroundWrap>
                 <URLProvider>
@@ -62,6 +62,5 @@ const App = () => {
         </AppWrap>
     </Router>
 };
-//<Route exact path = "/our-story"    element={<About/>}/>
 
 export default App;
