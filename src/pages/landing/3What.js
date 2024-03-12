@@ -51,9 +51,9 @@ const TextWrap = styled.div`
 
 const Title = styled.div`
     font-weight: 1000;
-    font-size: 2.5rem;
+    font-size: 3rem;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: left;
     @media (max-width: 1200px) {
         text-align: center;
@@ -62,13 +62,14 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
     font-weight: 800;
-    margin: 0 0 10px 40px;
+    margin: 0 0 10px 80px;
     font-size: 2rem;
     width: 100%;
     text-align: left;
     @media (max-width: 1200px) {
         text-align: center;
         margin-left: 0;
+        margin-bottom: 20px;
     }
     @media (max-width: 500px) {
         letter-spacing: 0.2rem;
@@ -79,9 +80,10 @@ const Subtitle = styled.div`
 const Row = styled.span`
     font-weight: 600;
     margin: 8px 0;
-    margin-left: 50px;
+    margin-left: 80px;
     width: 100%;
     font-size: 1.5rem;
+    letter-spacing: 0.2rem;
     @media (max-width: 1200px) {
         width: auto;
         margin-left: 0;
