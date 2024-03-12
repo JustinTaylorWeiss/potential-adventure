@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Button, TopLogo } from "../../globalComponents";
 import { useEffect, useRef, useState } from "react";
 import logo from "./assets/blackLogo.png";
+import { useMediaQuery } from "react-responsive";
 
 const ContactWrapper = styled.div`
     position: relative;
@@ -10,6 +11,9 @@ const ContactWrapper = styled.div`
     justify-content: center;
     align-items: center;
     height: calc(100vh - 142px);
+    @media (max-height: 900px) {
+        height: auto;
+    }
     @media (max-width: 1000px) {
         height: auto;
     }
@@ -27,6 +31,11 @@ const Grid = styled.div`
     margin: 0;
     font-weight: 400;
     color: black;
+    @media (max-height: 900px) {
+        position: static;
+        height: auto;
+        grid-template-columns: 1fr;
+    }
     @media (max-width: 1000px) {
         position: static;
         height: auto;
@@ -49,6 +58,11 @@ const TextWrap = styled.div`
     @media (max-width: 1400px) {
         margin-left: 15%;
     }
+    @media (max-height: 900px) {
+        margin-left: 0;
+        padding: 15% 0 7.5%;
+        justify-self: center;
+    }
     @media (max-width: 1000px) {
         margin-left: 0;
         padding: 15% 0 7.5%;
@@ -62,6 +76,12 @@ const Row = styled.span`
     margin: 10px;
     text-align: left;
     font-weight: 800;
+    @media (max-height: 1100px) {
+        font-size: 1.5rem;
+    }
+    @media (max-height: 900px) {
+        font-size: 2rem;
+    }
     @media (max-width: 550px) {
         letter-spacing: 0.2rem;
         font-size: 1.5rem;
@@ -74,8 +94,19 @@ const MapFrame = styled.iframe`
     border: 2px solid black;
     justify-self: flex-end;
     margin-right: 25%;
+    @media (max-height: 1100px) {
+        height: 500px;
+    }
     @media (max-width: 1400px) {
         margin-right: 15%;
+    }
+    @media (max-height: 900px) {
+        margin-right: 0;
+        justify-self: center;
+        width: 40%;
+        margin-bottom: 8%;
+        aspect-ratio: 1;
+        height: auto;
     }
     @media (max-width: 1000px) {
         margin-right: 0;
@@ -98,6 +129,12 @@ const TextAnchor = styled.a`
     &:hover {
         color: #d49d04;
     }
+    @media (max-height: 1100px) {
+        font-size: 1.75rem;
+    }
+    @media (max-height: 900px) {
+        font-size: 2rem;
+    }
     @media (max-width: 550px) {
         letter-spacing: 0.2rem;
         font-size: 1.5rem;
@@ -109,6 +146,12 @@ const Text = styled.span`
     font-size: 2rem;
     color: black;
     font-weight: 600;
+    @media (max-height: 1100px) {
+        font-size: 1.75rem;
+    }
+    @media (max-height: 900px) {
+        font-size: 2rem;
+    }
     @media (max-width: 550px) {
         letter-spacing: 0.2rem;
         font-size: 1.5rem;
@@ -127,6 +170,12 @@ const SmallText = styled.span`
 
 const Spacer = styled.div`
     height: 40px;
+    @media (max-height: 1100px) {
+        height: 30px;
+    }
+    @media (max-height: 900px) {
+        height: 40px;
+    }
     @media (max-width: 700px) {
         height: 40px;
     }
