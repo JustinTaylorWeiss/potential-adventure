@@ -13,17 +13,16 @@ import { Products } from './pages/products';
 import { useMediaQuery } from 'react-responsive';
 
 const Blur = styled.div`
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100%;
     z-index: 2;
     backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 `;
 
 const AppWrap = styled.div`
     position: relative;
-    overflow-y: ${props => props.$menuOpen ? "hidden" : "scroll"};
-    height: 100vh;
     overflow-x: hidden;
 `;
 
@@ -43,8 +42,19 @@ const App = () => {
         updateMenuOpen(!menuOpen);
     }
 
+    useEffect(() => {
+        document.documentElement.style.overflow = (menuOpen ? "hidden" : "scroll");
+        /*
+        if(menuOpen)
+            document.documentElement.style.overflow = "hidden";
+        else
+            delete document.documentElement.style.overflow;
+        */
+
+    },[menuOpen])
+
     return <Router>
-        <AppWrap id="AppWrap" $menuOpen={menuOpen}>
+        <AppWrap>
             <BackgroundWrap>
                 <URLProvider>
                     <Nav menuClick={onMenuClick}/>

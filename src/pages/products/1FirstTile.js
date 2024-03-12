@@ -11,11 +11,13 @@ const ContactWrapper = styled.div`
     width: 100vw;
     height: 50vh;
     background-image: url(${hero});
+    background-size: cover;
     font-size: 2.5rem;
     margin: 0;
     padding: 0;
     font-weight: 400;
     color: oldlace;
+    min-height: 500px;
     @media (max-width: 800px) {
         height: 40vh;
     }
@@ -40,6 +42,9 @@ const CTA = styled(Button)`
     font-size: 1.5rem;
     color: #101012;
     padding: 15px 30px;
+    &:hover {
+        cursor: pointer;
+    }
     &:active {
         padding: 10px 20px;
         margin-top: 35px;

@@ -37,6 +37,9 @@ const CTA = styled(Button)`
     border-color: oldlace;
     color: #101012;
     padding: 20px 40px;
+    &:hover {
+        cursor: pointer;
+    }
     &:active {
         padding: 15px 20px;
         margin-top: 25px;

@@ -1,11 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import line from "./assets/line.png";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Link } from "react-router-dom";
 import { useURL } from "../contexts/useURL";
 import { useMediaQuery } from 'react-responsive'
 
 const AboutWrapper = styled.div`
+    ${props => props.$fixed ? css`
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    ` : ""}
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,14 +98,30 @@ const Spacer = styled.span`
 export const Footer = () => {
 
     const { currentURL, updateCurrentURL }  = useURL();
+    const [isScrollable, setIsScrollable] = useState(true);
+    
+    useEffect(() => {
+        const onResize = (e) => {
+            setIsScrollable(document.body.clientHeight > window.innerHeight);
+        }
+        window.addEventListener("resize", onResize);
+
+        const resizeObserver = new ResizeObserver(onResize);
+        resizeObserver.observe(document.documentElement);
+
+        return () => {
+            window.removeEventListener("resize", onResize)
+            resizeObserver.unobserve(document.documentElement);
+        };
+    },[setIsScrollable]) 
 
 
     const linkClick = (newURL) => () => {
         updateCurrentURL(newURL);
-        document.getElementById("AppWrap").scrollTo(0, 0);
+        document.documentElement.scrollTo(0, 0);
     }
 
-    return <AboutWrapper>
+    return <AboutWrapper $fixed={!isScrollable}>
         <Bar src={line}/>
         <Row>
             {

@@ -1,6 +1,6 @@
 import { styled, keyframes, css } from "styled-components";
 import { Link } from "react-router-dom";
-import background from './assets/texture.png';
+import background from './assets/texture.jpg';
 import CloseIcon from '@mui/icons-material/Close';
 import { useURL } from "../contexts/useURL";
 
@@ -15,7 +15,7 @@ const menuSlideOut = keyframes`
 `;
 
 const MenuWrap = styled.div`
-    position: absolute;
+    position: fixed;
     width: 500px;
     height: 100%;
     z-index: 3;
@@ -113,7 +113,7 @@ export const Menu = ({menuClick, close}) => {
 
     const linkClick = (newURL) => () => {
         updateCurrentURL(newURL)
-        document.getElementById("AppWrap").scrollTo(0, 0);
+        document.documentElement.scrollTo(0, 0);
         menuClick();
     }
 
