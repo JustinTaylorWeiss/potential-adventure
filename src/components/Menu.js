@@ -17,9 +17,9 @@ const menuSlideOut = keyframes`
 const MenuWrap = styled.div`
     position: fixed;
     width: 500px;
-    height: 100%;
+    height: 100svh;
     z-index: 3;
-    left: ${props => props.$close ? "-650px" : "0"}; //If menu is closed put off screen
+    left: ${props => props.$close ? "0" : "-650px"}; //If menu is closed put off screen
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -31,6 +31,7 @@ const MenuWrap = styled.div`
     animation: ${props => props.$close ? menuSlideOut : menuSlideIn}; //If menu is closed move to off screen 
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 
     @media (max-width: 600px) {
         width: 100%;

@@ -1,8 +1,7 @@
 import './App.css';
-import styled from "styled-components";
+import { styled, keyframes, css } from "styled-components";
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-
 import { URLProvider } from './contexts/useURL';
 import { Nav } from './components/Nav';
 import { Menu } from './components/Menu';
@@ -43,7 +42,7 @@ const App = () => {
     }
 
     useEffect(() => {
-        document.documentElement.style.overflow = (menuOpen ? "hidden" : "scroll");
+        document.documentElement.style.overflow = (menuOpen ? "hidden" : "auto");
         /*
         if(menuOpen)
             document.documentElement.style.overflow = "hidden";
