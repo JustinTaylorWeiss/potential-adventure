@@ -27,7 +27,7 @@ const Grid = styled.div`
         grid-template-columns: 1fr;
     }
     @media (max-width: 550px) {
-        margin: 5% 0;
+        margin: 0 0;
     }
 `;
 

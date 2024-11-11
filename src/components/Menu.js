@@ -5,12 +5,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useURL } from "../contexts/useURL";
 
 const menuSlideIn = keyframes`
-    0% { left: -500px }
+    0% { left: -650px }
     100% { left: 0px }
 `;
 
 const menuSlideOut = keyframes`
-    100% { left: -500px }
+    100% { left: -650px }
     0% { left: 0px }
 `;
 
@@ -36,7 +36,6 @@ const MenuWrap = styled.div`
     @media (max-width: 600px) {
         width: 100%;
         padding-left: 0;
-        left: ${props => props.$close ? "-120%" : "0"};
     }
 `;
 
