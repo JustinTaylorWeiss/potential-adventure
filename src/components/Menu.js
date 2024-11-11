@@ -17,7 +17,7 @@ const menuSlideOut = keyframes`
 const MenuWrap = styled.div`
     position: fixed;
     width: 500px;
-    height: 100svh;
+    height: 100lvh;
     z-index: 3;
     left: ${props => props.$close ? "0" : "-650px"}; //If menu is closed put off screen
     display: flex;

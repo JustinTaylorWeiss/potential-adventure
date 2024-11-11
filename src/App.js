@@ -14,7 +14,7 @@ import { useMediaQuery } from 'react-responsive';
 const Blur = styled.div`
     position: fixed;
     width: 100vw;
-    height: 100%;
+    height: 100lvh;
     z-index: 2;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
