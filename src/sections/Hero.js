@@ -90,6 +90,12 @@ const CTARow = styled.div`
     align-items: center;
     flex-wrap: wrap;
     gap: 26px;
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
 `;
 
 const Note = styled.div`
@@ -100,9 +106,18 @@ const Note = styled.div`
     transform: rotate(-3deg);
 
     svg {
-        transform: scaleX(-1) rotate(58deg) translate(6px, 2px);
+        transform: translateY(-6px) scaleX(-1) rotate(22deg);
         width: 58px;
         flex: none;
+    }
+
+    /* Stacked layout: tucks under the button's right end, arrow pointing up at it. */
+    @media (max-width: 480px) {
+        align-self: flex-end;
+
+        svg {
+            transform: translateY(-20px) scaleX(-1) rotate(-5deg);
+        }
     }
 `;
 
@@ -131,6 +146,10 @@ const ScrollCue = styled.a`
     }
 
     @media (max-height: 640px) {
+        display: none;
+    }
+    /* The bridge fills the hero bottom on mobile — no room for the cue */
+    @media (max-width: 760px) {
         display: none;
     }
 `;
