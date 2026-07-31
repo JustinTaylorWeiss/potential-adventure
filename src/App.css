@@ -1,35 +1,52 @@
+:root {
+    --paper: #f3ecdd;
+    --paper-raised: #fdfaf1;
+    --ink: #191511;
+    --ink-soft: #453e31;
+    --red: #bd3a1c;
+    --red-bright: #e2603c;
+}
+
 * {
-    transition: all 40ms;
     box-sizing: border-box;
 }
+
 html {
-    margin: env(safe-area-inset);
-    padding: env(safe-area-inset);
     scroll-behavior: smooth;
-    font-family: "Inconsolata", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    font-size: 0.7rem;
-    color: #101012;
-    overflow-y: auto;
-    white-space: normal;
-    overflow-x: hidden;
+    scrollbar-color: var(--ink) transparent;
 }
+
 body {
-    background-image: url("./pages/landing/assets/paper.jpg");
+    margin: 0;
+    background-color: var(--paper);
+    background-image: url("./assets/paper.jpg");
+    background-size: 100% auto;
     background-repeat: repeat-y;
-    background-size: 100%;
+    color: var(--ink);
+    font-family: "Newsreader", Georgia, serif;
+    font-optical-sizing: auto;
+    font-size: 1.0625rem;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin: 0;
+    overflow-x: hidden;
 }
+
+h1, h2, h3, h4 {
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+}
+
+a {
+    color: inherit;
+}
+
 img {
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
     user-select: none;
+    -webkit-user-drag: none;
 }
-:hover {
-    transition: 0.2s ease-in-out;
+
+::selection {
+    background: var(--red);
+    color: var(--paper);
 }
